@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Face Army - Sahil Koli | Cybersecurity Expert</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
     body {
       background: radial-gradient(circle at top left, #0a0f1c, #151f30, #1d2738);
       color: white;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      min-height: 100vh;
     }
     .hero {
       padding-top: 80px;
@@ -29,84 +31,118 @@
       font-size: 3rem;
       font-weight: bold;
       color: #7df9ff;
-      /* text-shadow: 0 0 20px #7df9ff; */
     }
     .hero p {
       font-size: 1.2rem;
     }
-    .btn {
+    .btn, .btn:focus {
       background-color: #7df9ff;
-      color: #0a0f1c;
+      color: #0a0f1c !important;
       font-weight: 500;
-      box-shadow: 0 0 4px #7df9ff; /* Reduced shadow */
+      border: none;
+      box-shadow: 0 0 4px #7df9ff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover {
+      background-color: #5fd6e7;
+      color: #0a0f1c !important;
     }
     .hero-img {
-      border-radius: 100%;
-      width: 100%;
-      max-width: 300px;
+      border-radius: 50%;
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
       border: 4px solid #7df9ff;
       box-shadow: 0 0 20px #7df9ff;
+      background: #151f30;
+      display: block;
+      margin: 0 auto;
     }
     .section-title {
       color: #7df9ff;
       font-weight: bold;
       margin-bottom: 1rem;
-      /* text-shadow: 0 0 10px #7df9ff; */
     }
     .card {
-      background-color: rgba(10, 15, 28, 0.7);
+      background-color: rgba(10, 15, 28, 0.85);
       border: 1px solid #7df9ff;
       border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(125, 249, 255, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 15px rgba(125, 249, 255, 0.15);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(125, 249, 255, 0.6);
+      box-shadow: 0 0 25px rgba(125, 249, 255, 0.3);
     }
     footer {
       text-align: center;
       margin-top: 4rem;
       color: white;
+      padding-bottom: 2rem;
     }
     .social-icons a {
       margin: 0 10px;
       color: #7df9ff;
       font-size: 1.5rem;
       text-decoration: none;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    @media (max-width: 991px) {
+      .hero-img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+    @media (max-width: 767px) {
+      .hero-img {
+        width: 120px;
+        height: 120px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-10">
-        
-          <h3 class="fs-4 text-white mb-3">Welcome to <span style="color:#7df9ff">Happy Face Army</span></h3>
-          <p class="fs-5">My goal is to build the <strong>world's largest community of ethical hackers</strong> — a thriving hub where cybersecurity knowledge is shared, skills are honed, and the next generation of red teamers collaborate to secure the digital world.</p>
-          <p class="fs-6">If you're passionate about ethical hacking, red teaming, or cybersecurity in general — <strong>you’re welcome to join the movement.</strong></p>
-          <a href="#contact" class="btn mt-3 text-white" style="color: #000 !important;">Join the Movement</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container mb-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h3 class="fs-4 text-white mb-3">
+            Welcome to <span style="color:#7df9ff">Happy Face Army</span>
+          </h3>
+          <p class="fs-5">
+            My goal is to build the <strong>world's largest community of ethical hackers</strong> — a thriving hub where cybersecurity knowledge is shared, skills are honed, and the next generation of red teamers collaborate to secure the digital world.
+          </p>
+          <p class="fs-6">
+            If you're passionate about ethical hacking, red teaming, or cybersecurity in general — <strong>you’re welcome to join the movement.</strong>
+          </p>
+          <a href="#contact" class="btn mt-3">Join the Movement</a>
+        </div>
+        <div class="col-lg-6 d-flex flex-column align-items-center">
+          <img src="profile.jpg" alt="Sahil Koli" class="hero-img mb-3">
+          <h1 class="mb-2 text-center">Hello, I'm Sahil Koli</h1>
+          <p class="text-center mb-3">Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester | 3rd Year IT Student @ D.Y. Patil University</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <a href="#contact" class="btn">Let's Talk</a>
+            <a href="#portfolio" class="btn">View Portfolio</a>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="row align-items-center">
-      <div class="col-md-6 text-start">
-        <h1>Hello, I'm Sahil Koli</h1>
-        <p>Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester | 3rd Year IT Student @ D.Y. Patil University</p>
-        <a href="#contact" class="btn text-white">Let's Talk</a>
-        <a href="#portfolio" class="btn">View Portfolio</a>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="profile.jpg" alt="Sahil Koli" class="hero-img">
-      </div>
-    </div>
-  </div>
-
+  <!-- Portfolio Section -->
   <div class="container mb-5" id="portfolio">
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="card p-4">
+        <div class="card p-4 h-100">
           <h2 class="section-title">🎓 Education</h2>
           <p><strong>Degree:</strong> B.Tech in Information Technology</p>
           <p><strong>Institute:</strong> D.Y. Patil University</p>
@@ -114,103 +150,117 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card p-4">
+        <div class="card p-4 h-100 text-center">
+          <div class="d-flex justify-content-center align-items-center mb-4 gap-4">
+            <div class="text-center">
+              <img src="simplilearn.jpg" alt="Simplilearn Training Certificate" class="hero-img mb-2" style="width:100px; height:100px;">
+              <div class="fw-semibold" style="color:#7df9ff; font-size:1rem;">Simplilearn Training Certificate</div>
+            </div>
+            <div class="text-center">
+              <img src="ECC.jpg" alt="CEH Certificate of Attendance" class="hero-img mb-2" style="width:100px; height:100px;">
+              <div class="fw-semibold" style="color:#7df9ff; font-size:1rem;">CEH Certificate of Attendance</div>
+            </div>
+          </div>
           <h2 class="section-title">📜 Certifications</h2>
-          <ul>
+          <ul class="text-start mx-auto" style="max-width: 350px;">
             <li>Certified Ethical Hacker (C|EH v13) - EC-Council, March 2025</li>
             <li>Evaluation Certificate - Simplilearn, April 2025</li>
           </ul>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card p-4">
+        <div class="card p-4 h-100">
           <h2 class="section-title">💼 Red Teaming Skills</h2>
           <button class="btn btn-sm btn-outline-light mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#redTeamSkills" aria-expanded="false" aria-controls="redTeamSkills">
             Toggle Skills
           </button>
           <div class="collapse show" id="redTeamSkills">
-<div class="row g-3">
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-bullseye text-info me-3"></i>
-      <div>
-        <strong>Information Gathering<br>
-        Reconnaissance and OSINT</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-diagram-3 text-info me-3"></i>
-      <div>
-        <strong>Scanning & Enumeration<br>
-        Identifying services and systems</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-bug text-info me-3"></i>
-      <div>
-        <strong>Exploitation<br>
-        System & web-based attacks</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-key text-info me-3"></i>
-      <div>
-        <strong>Privilege Escalation<br>
-        Gaining higher access</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-person-bounding-box text-info me-3"></i>
-      <div>
-        <strong>Social Engineering<br>
-        Phishing & impersonation</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-shield-lock text-info me-3"></i>
-      <div>
-        <strong>Persistence & Evasion<br>
-        C2 and AV bypass</strong>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-12">
-    <div class="d-flex align-items-start">
-      <i class="bi bi-journal-text text-info me-3"></i>
-      <div>
-        <strong>Reporting<br>
-        Documenting red team findings</strong>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-bullseye text-info me-3"></i>
+                  <div>
+                    <strong>Information Gathering<br>Reconnaissance and OSINT</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-diagram-3 text-info me-3"></i>
+                  <div>
+                    <strong>Scanning & Enumeration<br>Identifying services and systems</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-bug text-info me-3"></i>
+                  <div>
+                    <strong>Exploitation<br>System & web-based attacks</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-key text-info me-3"></i>
+                  <div>
+                    <strong>Privilege Escalation<br>Gaining higher access</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-person-bounding-box text-info me-3"></i>
+                  <div>
+                    <strong>Social Engineering<br>Phishing & impersonation</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-shield-lock text-info me-3"></i>
+                  <div>
+                    <strong>Persistence & Evasion<br>C2 and AV bypass</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-journal-text text-info me-3"></i>
+                  <div>
+                    <strong>Reporting<br>Documenting red team findings</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card p-4">
+        <div class="card p-4 h-100">
           <h2 class="section-title">📫 Contact</h2>
-          <p>Email: <a href="mailto:sahilkoli11223@gmail.com" style="color:#7df9ff">sahilkoli11223@gmail.com</a></p>
+          <form action="https://formspree.io/f/xwpqnoen" method="POST">
+            <div class="mb-3">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn w-100">Send Message</button>
+          </form>
+          <p class="mt-3 mb-1">Or email: <a href="mailto:sahilkoli11223@gmail.com" style="color:#7df9ff">sahilkoli11223@gmail.com</a></p>
           <div class="social-icons">
-            <a href="#"><i class="bi bi-github"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/sahil-koli-8ba0792b8" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/j.o.k.e.r_sk/" target="_blank"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
       </div>
-    </div>
       <div class="col-md-12">
-        <div class="card p-4">
+        <div class="card p-4 h-100">
           <h2 class="section-title">🛠 Keylogger Project</h2>
           <p>This project is a Python-based keylogger designed to capture keystrokes for educational and cybersecurity testing purposes. It demonstrates the principles of input monitoring, logging, and ethical hacking best practices.</p>
           <ul>
@@ -225,16 +275,13 @@
     </div>
   </div>
 
-<footer>
+  <footer>
     <p>&copy; <span id="year"></span> Sahil Koli. All rights reserved.</p>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
