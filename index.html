@@ -1,303 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Face Army - Sahil Koli | Cybersecurity Expert</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <style>
+    
     body {
-      background: radial-gradient(circle at top left, #0a0f1c, #151f30, #1d2738);
-      color: white;
+      background: white;
+      color: black;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
-      min-height: 100vh;
     }
-    .hero {
-      padding-top: 80px;
-      padding-bottom: 80px;
+
+    #spline-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
     }
-    .hero h1,
-    .hero p,
-    .card p,
-    .card li,
-    .card ul,
-    .card strong,
-    footer p {
+
+    #spline-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .btn,
+    .btn:focus {
+      background-color: black !important;
+      color: white !important;
+      border: none;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: black !important;
       color: white !important;
     }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #7df9ff;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .btn, .btn:focus {
-      background-color: #7df9ff;
-      color: #0a0f1c !important;
-      font-weight: 500;
-      border: none;
-      box-shadow: 0 0 4px #7df9ff;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn:hover {
-      background-color: #5fd6e7;
-      color: #0a0f1c !important;
-    }
+
     .hero-img {
       border-radius: 50%;
       width: 260px;
       height: 260px;
       object-fit: cover;
-      border: 4px solid #7df9ff;
-      box-shadow: 0 0 20px #7df9ff;
-      background: #151f30;
+      border: 4px solid black;
+      background: #fff;
       display: block;
       margin: 0 auto;
     }
+     .project-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent white */
+    backdrop-filter: blur(4px);
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .project-card h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: black;
+  }
+
+  .project-card p,
+  .project-card li {
+    color: black;
+    font-size: 1rem;
+  }
+
+  .project-card ul {
+    padding-left: 1.2rem;
+  }
+
+  .project-card .btn {
+    background-color: black;
+    color: white !important;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .project-card .btn:hover {
+    background-color: #222;
+  }
+
+  footer p {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 2rem;
+    color: black;
+  }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1px solid black;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(5px);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .section-title {
-      color: #7df9ff;
       font-weight: bold;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-    .card {
-      background-color: rgba(10, 15, 28, 0.85);
-      border: 1px solid #7df9ff;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(125, 249, 255, 0.15);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(125, 249, 255, 0.3);
-    }
+
     footer {
       text-align: center;
       margin-top: 4rem;
-      color: white;
-      padding-bottom: 2rem;
+      padding: 2rem 0;
     }
+
     .social-icons a {
       margin: 0 10px;
-      color: #7df9ff;
       font-size: 1.5rem;
+      color: black;
       text-decoration: none;
-      transition: color 0.2s;
     }
+
     .social-icons a:hover {
-      color: #fff;
+      color: gray;
     }
-    @media (max-width: 991px) {
-      .hero-img {
-        width: 180px;
-        height: 180px;
-      }
-    }
+
     @media (max-width: 767px) {
       .hero-img {
-        width: 120px;
-        height: 120px;
-      }
-      .hero h1 {
-        font-size: 2rem;
+        width: 150px;
+        height: 150px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container mb-5">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h3 class="fs-4 text-white mb-3">
-            Welcome to <span style="color:#7df9ff">Happy Face Army</span>
-          </h3>
-          <p class="fs-5">
-            My goal is to build the <strong>world's largest community of ethical hackers</strong> — a thriving hub where cybersecurity knowledge is shared, skills are honed, and the next generation of red teamers collaborate to secure the digital world.
-          </p>
-          <p class="fs-6">
-            If you're passionate about ethical hacking, red teaming, or cybersecurity in general — <strong>you’re welcome to join the movement.</strong>
-          </p>
-          <a href="#contact" class="btn mt-3">Join the Movement</a>
-        </div>
-        <div class="col-lg-6 d-flex flex-column align-items-center">
-          <img src="profile.jpg" alt="Sahil Koli" class="hero-img mb-3">
-          <h1 class="mb-2 text-center">Hello, I'm Sahil Koli</h1>
-          <p class="text-center mb-3">Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester | 3rd Year IT Student @ D.Y. Patil University</p>
-          <div class="d-flex gap-2 justify-content-center">
-            <a href="#contact" class="btn">Let's Talk</a>
-            <a href="#portfolio" class="btn">View Portfolio</a>
-          </div>
+<!-- 3D Spline Background -->
+<div id="spline-bg">
+  <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-12bMDex4WSwBPcdxrWKhg8ZQ/" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Hero Section -->
+<section class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4">
+        <h3>Welcome to <strong>Happy Face Army</strong></h3>
+        <p>My goal is to build the <strong>world's largest community of ethical hackers</strong> — a thriving hub where cybersecurity knowledge is shared, skills are honed, and the next generation of red teamers collaborate to secure the digital world.</p>
+        <p>If you're passionate about ethical hacking, red teaming, or cybersecurity in general — <strong>you’re welcome to join the movement.</strong></p>
+        <a href="#contact" class="btn mt-3">Join the Movement</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="profile.jpg" alt="Sahil Koli" class="hero-img mb-3">
+        <h1>Hello, I'm Sahil Koli</h1>
+        <p>Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester | 3rd Year IT Student @ D.Y. Patil University</p>
+        <a href="#portfolio" class="btn me-2">View Portfolio</a>
+        <a href="#contact" class="btn">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<div class="container" id="portfolio">
+  <!-- Education + Certifications -->
+  <div class="row">
+    <div class="col-md-6 mb-4 d-flex">
+      <div class="card w-100">
+        <h2 class="section-title">🎓 Education</h2>
+        <p><strong>Degree:</strong> B.Tech in Information Technology</p>
+        <p><strong>Institute:</strong> D.Y. Patil University</p>
+        <p><strong>Year:</strong> 3rd Year</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4 d-flex">
+      <div class="card w-100">
+        <h2 class="section-title">📜 Certifications</h2>
+        <ul>
+          <li>
+            Certified Ethical Hacker (C|EH v13)<br>
+            <strong>Certificate Code:</strong> 748705
+          </li>
+          <li>
+            Simplilearn Evaluation Certificate<br>
+            <strong>Training Code:</strong> 8080102
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Red Teaming + Contact -->
+  <div class="row">
+    <div class="col-md-6 mb-4 d-flex">
+      <div class="card w-100">
+        <h2 class="section-title">💼 Red Teaming Skills</h2>
+        <button class="btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#redTeamSkills">Toggle Skills</button>
+        <div class="collapse show" id="redTeamSkills">
+          <ul>
+            <li><strong>Information Gathering:</strong> Reconnaissance and OSINT</li>
+            <li><strong>Scanning & Enumeration:</strong> Services and systems</li>
+            <li><strong>Exploitation:</strong> System & web-based attacks</li>
+            <li><strong>Privilege Escalation:</strong> Gaining higher access</li>
+            <li><strong>Social Engineering:</strong> Phishing & impersonation</li>
+            <li><strong>Persistence & Evasion:</strong> C2 and AV bypass</li>
+            <li><strong>Reporting:</strong> Red team findings</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <div class="container mb-5" id="portfolio">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h2 class="section-title">🎓 Education</h2>
-          <p><strong>Degree:</strong> B.Tech in Information Technology</p>
-          <p><strong>Institute:</strong> D.Y. Patil University</p>
-          <p><strong>Year:</strong> 3rd Year</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100 text-center">
-          <h2 class="section-title">📜 Certifications</h2>
-          <ul class="text-start mx-auto" style="max-width: 350px;">
-            <li>
-              Certified Ethical Hacker (C|EH v13) - EC-Council, March 2025<br>
-              <span style="color:#7df9ff; font-size:0.95em;">
-                Certificate Number: 748705
-              </span>
-            </li>
-            <li>
-              Evaluation Certificate - Simplilearn, April 2025<br>
-              <span style="color:#7df9ff; font-size:0.95em;">
-                Training Code: 8080102
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h2 class="section-title">💼 Red Teaming Skills</h2>
-          <button class="btn btn-sm btn-outline-light mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#redTeamSkills" aria-expanded="false" aria-controls="redTeamSkills">
-            Toggle Skills
-          </button>
-          <div class="collapse show" id="redTeamSkills">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-bullseye text-info me-3"></i>
-                  <div>
-                    <strong>Information Gathering<br>Reconnaissance and OSINT</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-diagram-3 text-info me-3"></i>
-                  <div>
-                    <strong>Scanning & Enumeration<br>Identifying services and systems</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-bug text-info me-3"></i>
-                  <div>
-                    <strong>Exploitation<br>System & web-based attacks</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-key text-info me-3"></i>
-                  <div>
-                    <strong>Privilege Escalation<br>Gaining higher access</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-person-bounding-box text-info me-3"></i>
-                  <div>
-                    <strong>Social Engineering<br>Phishing & impersonation</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-shield-lock text-info me-3"></i>
-                  <div>
-                    <strong>Persistence & Evasion<br>C2 and AV bypass</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-journal-text text-info me-3"></i>
-                  <div>
-                    <strong>Reporting<br>Documenting red team findings</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h2 class="section-title">📫 Contact</h2>
-          <form action="https://formspree.io/f/xwpqnoen" method="POST">
-            <div class="mb-3">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-              <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn w-100">Send Message</button>
-          </form>
-          <p class="mt-3 mb-1">Or email: <a href="mailto:sahilkoli11223@gmail.com" style="color:#7df9ff">sahilkoli11223@gmail.com</a></p>
-          <div class="social-icons">
-            <a href="https://github.com/jokersk551" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/j.o.k.e.r_sk/" target="_blank"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="card p-4 h-100">
-          <h2 class="section-title">🛠 Keylogger Project</h2>
-          <p>This project is a Python-based keylogger designed to capture keystrokes for educational and cybersecurity testing purposes. It demonstrates the principles of input monitoring, logging, and ethical hacking best practices.</p>
-          <ul>
-            <li><strong>Language:</strong> Python</li>
-            <li><strong>Libraries:</strong> pynput</li>
-            <li><strong>Features:</strong> Logs keystrokes, supports encryption, and optional email alerts</li>
-            <li><strong>Use Case:</strong> Demonstration for ethical hacking labs and red-team exercises</li>
-          </ul>
-          <a href="https://github.com/jokersk551" class="btn mt-3">View on GitHub</a>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="card p-4 h-100">
-          <h2 class="section-title">🤖 AI Email Finder Project</h2>
-          <p>
-            The AI Email Finder is a smart tool that uses artificial intelligence to discover and verify email addresses from public sources. It is designed for ethical use in cybersecurity, recruitment, and business outreach.
-          </p>
-          <ul>
-            <li><strong>Language:</strong> Python</li>
-            <li><strong>Libraries:</strong> requests, BeautifulSoup, machine learning APIs</li>
-            <li><strong>Features:</strong> Finds emails, validates deliverability, avoids duplicates, and respects privacy guidelines</li>
-            <li><strong>Use Case:</strong> Useful for penetration testers, recruiters, and sales professionals to ethically gather contact information</li>
-          </ul>
-          <a href="https://github.com/jokersk551" class="btn mt-3">View on GitHub</a>
+    <div class="col-md-6 mb-4 d-flex">
+      <div class="card w-100" id="contact">
+        <h2 class="section-title">📫 Contact</h2>
+        <form action="https://formspree.io/f/xwpqnoen" method="POST">
+          <input type="text" name="name" class="form-control mb-2" placeholder="Your Name" required>
+          <input type="email" name="email" class="form-control mb-2" placeholder="Your Email" required>
+          <textarea name="message" class="form-control mb-2" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn w-100">Send Message</button>
+        </form>
+        <p class="mt-3">Or email: <a href="mailto:sahilkoli11223@gmail.com">sahilkoli11223@gmail.com</a></p>
+        <div class="social-icons">
+          <a href="https://github.com/jokersk551" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/j.o.k.e.r_sk/" target="_blank"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Sahil Koli. All rights reserved.</p>
-  </footer>
+  <!-- Projects -->
+ <div class="container" id="projects">
+  <div class="project-card">
+    <h3>🛠 Keylogger Project</h3>
+    <p>This project is a Python-based keylogger designed to capture keystrokes for educational and cybersecurity testing purposes. It demonstrates the principles of input monitoring, logging, and ethical hacking best practices.</p>
+    <ul>
+      <li><strong>Language:</strong> Python</li>
+      <li><strong>Libraries:</strong> pynput</li>
+      <li><strong>Features:</strong> Logs keystrokes, supports encryption, and optional email alerts</li>
+      <li><strong>Use Case:</strong> Demonstration for ethical hacking labs and red-team exercises</li>
+    </ul>
+    <a href="https://github.com/jokersk551" target="_blank" class="btn">View on GitHub</a>
+  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="project-card">
+    <h3>🤖 AI Email Finder Project</h3>
+    <p>The AI Email Finder is a smart tool that uses artificial intelligence to discover and verify email addresses from public sources. It is designed for ethical use in cybersecurity, recruitment, and business outreach.</p>
+    <ul>
+      <li><strong>Language:</strong> Python</li>
+      <li><strong>Libraries:</strong> requests, BeautifulSoup, machine learning APIs</li>
+      <li><strong>Features:</strong> Finds emails, validates deliverability, avoids duplicates, and respects privacy guidelines</li>
+      <li><strong>Use Case:</strong> Useful for penetration testers, recruiters, and sales professionals to ethically gather contact information</li>
+    </ul>
+    <a href="https://github.com/jokersk551" target="_blank" class="btn">View on GitHub</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; <span id="year"></span> Sahil Koli. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
